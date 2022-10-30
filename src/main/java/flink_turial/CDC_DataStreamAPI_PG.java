@@ -1,4 +1,4 @@
-package org.example;
+package flink_turial;
 
 import com.ververica.cdc.debezium.DebeziumSourceFunction;
 import io.debezium.connector.postgresql.PostgresConnector;

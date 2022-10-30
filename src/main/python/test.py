@@ -32,3 +32,5 @@ import requests
 # 发送API请求
 url = "https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=e9de18477afe93323ffe06a8b4bcf910"
 r = requests.get(url)
+
+

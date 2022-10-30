@@ -1,4 +1,4 @@
-package org.example;
+package flink_turial;
 
 import org.apache.flink.api.java.ExecutionEnvironment;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

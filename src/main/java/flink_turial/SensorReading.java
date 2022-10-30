@@ -1,4 +1,4 @@
-package org.example;
+package flink_turial;
 
 /**
  * @author : Ashiamd email: ashiamd@foxmail.com

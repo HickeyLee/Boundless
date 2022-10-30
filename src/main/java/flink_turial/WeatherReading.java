@@ -1,4 +1,4 @@
-package org.example;
+package flink_turial;
 
 public class WeatherReading {
     private String status;
