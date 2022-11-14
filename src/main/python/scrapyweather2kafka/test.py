@@ -26,7 +26,8 @@
 
 
 import requests
-
+import os
+print(os.path.abspath('..'))
 
 
 # 发送API请求
