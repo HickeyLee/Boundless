@@ -20,6 +20,7 @@ product_rg = product_df.shape[0]
 user_rg = user_df.shape[0]
 
 # producer = KafkaProducer(bootstrap_servers=["127.0.0.1:9092"])
+producer = KafkaProducer(bootstrap_servers=['1.15.120.226:9092'])
 
 df = []
 for i in range(20):
@@ -52,7 +53,7 @@ for i in range(20):
 
         t = json.dumps(forecast_data )
         b_info_str = t.encode()
-        # producer.send("easy-quickstart-events-1", b_info_str)
+        producer.send("quickstart-events", b_info_str)
         
     except Exception as e:
         traceback.print_exc()
