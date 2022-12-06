@@ -47,7 +47,7 @@ for i in range(20):
             "order_amount": random.randint(1,4),
             "order_price":random.randint(1,4)*float(product_df.loc[pd_inx, "mk_price"])
         }
-        # print("forecast_data", forecast_data)
+        print("forecast_data", forecast_data)
         df.append(forecast_data)
         # df = pd.DataFrame.from_dict(forecast_data)
 
