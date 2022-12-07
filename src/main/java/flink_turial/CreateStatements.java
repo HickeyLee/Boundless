@@ -45,7 +45,6 @@ public class CreateStatements {
         );
 
 
-
 //        Table Result = tableEnv.sqlQuery("select * ,user_id as user_id1 from source_user_behavior");
 //        这里声明的Result怎么才能在SQL中使用
 //        方法2:直接通过table api进行操作
@@ -57,7 +56,6 @@ public class CreateStatements {
 //        混用table api和sql 的注意事项
 //        可以在 SQL 查询返回的 Table 对象上定义 Table API 查询。
 //        在 TableEnvironment 中注册的结果表可以在 SQL 查询的 FROM 子句中引用，通过这种方法就可以在 Table API 查询的结果上定义 SQL 查询。
-
 
 
 //      创建水位线的方法1：通过先创建衍生列，再创建水位线去操作
@@ -83,14 +81,13 @@ public class CreateStatements {
 
                 "    ) WITH (\n" +
                 "            'connector' = 'kafka', \n" +
-                "            'topic' = 'quickstart-events', "  +
-                "            'properties.bootstrap.servers' = '1.15.120.226:9092', "  +
-                "            'properties.group.id' = 'Flink-Group', "  +
-                "            'scan.startup.mode' = 'earliest-offset', "  +
-                "            'format' = 'json'"  +
+                "            'topic' = 'quickstart-events', " +
+                "            'properties.bootstrap.servers' = '1.15.120.226:9092', " +
+                "            'properties.group.id' = 'Flink-Group', " +
+                "            'scan.startup.mode' = 'earliest-offset', " +
+                "            'format' = 'json'" +
                 "    )"
         );
-
 
 
 //        创建水位线的方法2:
@@ -101,6 +98,11 @@ public class CreateStatements {
 //                ")" +
 //                "LIKE  source_user_behavior");
 
+
+//        这里还需要进一步介绍关于physical column列和 virtual Columns（for example Computed Columns）的区别，需要确认like是否支持计算列，可能因为计算列未存储实际元数据，导致无法在like子句中使用
+//        A computed column evaluates an expression that can reference other columns declared in the same table. Both physical columns and metadata columns can be accessed. The column itself is not physically stored within the table. The column’s data type is derived automatically from the given expression and does not have to be declared manually.
+//        The planner will transform computed columns into a regular projection after the source. For optimization or watermark strategy push down, the evaluation might be spread across operators, performed multiple times, or skipped if not needed for the given query.    }
+//
 
     }
 }
