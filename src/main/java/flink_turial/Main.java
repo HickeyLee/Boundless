@@ -1,7 +1,8 @@
 package flink_turial;
 //import org.example.Datagen;
 //import org.example.CDC_DataStreamAPI_PG;
-import flink_turial.CDC_TableAPI_Mysql;
+
+import Others.CDC_TableAPI_Mysql;
 
 public class Main {
     public static void main(String[] args) throws Exception

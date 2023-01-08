@@ -23,7 +23,7 @@ user_rg = user_df.shape[0]
 producer = KafkaProducer(bootstrap_servers=['1.15.120.226:9092'])
 
 df = []
-for i in range(20):
+for i in range(300):
     pd_inx = random.randint(0, product_rg - 1)
     user_idx = random.randint(0, user_rg - 1)
     
